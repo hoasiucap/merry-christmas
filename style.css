@@ -1,0 +1,357 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    justify-content: center;
+    overflow: hidden;
+    align-items: center;
+    height: 100vh;
+    background: url('https://images.vexels.com/media/users/3/125848/raw/d273236535f01a20b0f3eecfe6e56f48-christmas-landscape-background.jpg') bottom center / cover no-repeat; 
+    /* background: url() top center / cover no-repeat */
+}
+
+.tree-parent{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tree{
+
+    display: flex;
+    position: relative;
+    z-index: 1;
+    top: -150px;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(30deg);
+    animation: animation 25s linear infinite;
+}
+
+.tree::before{
+    content: "⭐";
+    position: absolute;
+    font-size: 4rem;
+    left: calc(50% - 45px);
+    top: -115px;
+}
+
+@keyframes animation{
+    from{
+        transform: rotateX(-20deg) rotateY(360deg);
+    }
+
+    to{
+        transform: rotateX(-20deg) rotateY(0deg);
+    }
+}
+
+.tree div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: translateY(calc(100px * var(--j)));
+}
+
+.tree div.top span{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( 90.9deg,  rgba(0,139,50,1) 0.5%, rgba(0,214,32,1) 99.7% );
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+.tree div.bottom span {
+    position: absolute;
+    top: 350px;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 100%;
+    background-image: linear-gradient(90deg, #bb4622, #df7214);
+    /* clip-path: polygon(50% 0% , 0% 100%, 100% 100%); */
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i)))
+    translateZ(30px); 
+
+}
+
+.tree div.border-arround span{
+    position: absolute;
+    top: 0;
+    left: calc(50% - 30px);
+    width: 60px;
+    height: 100px;
+    background:  linear-gradient(90deg, #792a11, #df7214);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(30px);
+}
+
+.shadow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(66, 12, 12, 0.133);
+    transform-style: preserve-3d;
+    transform: rotateX(90deg) translateZ(-500px);
+    filter: blur(20px);
+}
+
+section{
+    position: relative;
+    top: 0; left: 0; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section i{
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 1px whitesmoke,
+                0 0 2px whitesmoke;
+    animation: animate linear infinite;
+}
+
+section i:nth-child(even){
+    border: 1px solid #fff;
+}
+
+@keyframes animate{
+    0%{
+        transform: translateY(0%);
+        opacity: 0;
+    }
+
+    5%{
+        opacity: 1;
+    }
+
+    50%{
+        transform: translateY(2000%);
+        opacity: 1;        
+    }
+
+    95%{
+        opacity: 1;       
+    }
+
+    100%{
+        transform: translateY(4000%);
+        opacity: 0;
+    }
+}
+
+.satan{
+    width: 600px;
+    z-index: 2;
+    position: fixed;
+    bottom: 2px;
+    left: -20px;
+}
+
+
+
+.first-side::before{
+    content: "";
+    position: absolute;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHmJf7ikz3k5Qt2x_ZnShKYnQ0FQvK-Iuv-xKhxh2RdslbQ6-4d7IJ7kyP6MR5cSq9naY&usqp=CAU')top center / cover no-repeat;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+.second-side::before{
+    content: "";
+    position: absolute;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHmJf7ikz3k5Qt2x_ZnShKYnQ0FQvK-Iuv-xKhxh2RdslbQ6-4d7IJ7kyP6MR5cSq9naY&usqp=CAU')top center / cover no-repeat;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(180deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+.third-side::before{
+    content: "";
+    position: absolute;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHmJf7ikz3k5Qt2x_ZnShKYnQ0FQvK-Iuv-xKhxh2RdslbQ6-4d7IJ7kyP6MR5cSq9naY&usqp=CAU')top center / cover no-repeat;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+.fourth-side::before{
+    content: "";
+    position: absolute;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHmJf7ikz3k5Qt2x_ZnShKYnQ0FQvK-Iuv-xKhxh2RdslbQ6-4d7IJ7kyP6MR5cSq9naY&usqp=CAU')top center / cover no-repeat;
+    top: 45px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(180deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+.tree .first-slide1 span::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient( 90.9deg,  rgb(32, 18, 95) 0.5%, rgba(0,214,32,1) 99.7% );
+    clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+    transform-origin: bottom;
+    border-bottom: 10px solid #00000019;
+    transform: rotateY(calc(90deg * var(--i))) rotateX(30deg)
+    translateZ(173px); 
+}
+
+
+.music audio{
+    position: fixed;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 200px;
+    display: flex;
+}
+
+
+
+
+@media (min-width:767px) and (max-width:985px){
+    .satan img{
+        left: -140px;
+    }
+
+    .tree-parent{
+        right: -98px;
+    }
+}
+
+@media (min-width:600px)and (max-width:766px){
+    .satan img{
+        left: -180px;
+    }
+
+    .tree-parent{
+        right: -120px;
+    }
+}
+
+@media  (max-width:500px){
+    .satan img{
+        z-index: 2;
+        position: fixed;
+        bottom: 1px;
+        left: -100px;
+        width: 400px;
+    }
+
+    .tree{
+
+        display: flex;
+        position: relative;
+        z-index: 1;
+        right: -55px;
+        top: 42px;
+        width: 150px;
+        height: 150px;
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(30deg);
+        animation: animation 25s linear infinite;
+    }
+
+    .tree div.top span{
+        top: 0;
+        left: 0;
+        background-image: linear-gradient( 90.9deg,  rgba(0,139,50,1) 0.5%, rgba(0,214,32,1) 99.7% );
+        clip-path: polygon(50% 0% , 0% 100%, 100% 100%);
+        transform-origin: bottom;
+        border-bottom: 10px solid #00000019;
+        transform: rotateY(calc(90deg * var(--i))) rotateX(39deg)
+        translateZ(92px); 
+    }
+
+    .tree div.bottom span {
+        position: absolute;
+        top: 195px;
+        left: calc(50% - 30px);
+        width: 35px;
+        height: 100%;
+        background-image: linear-gradient(90deg, #bb4622, #df7214);
+        /* clip-path: polygon(50% 0% , 0% 100%, 100% 100%); */
+        transform-origin: bottom;
+        border-bottom: 10px solid #00000019;
+        transform: rotateY(calc(90deg * var(--i)))
+        translateZ(17px); 
+    
+    }
+
+    .tree div{
+        height: 113px;
+        transform: translateY(calc(66px * var(--j)));
+    
+    }
+
+
+    audio.music{
+        background-color: #792a11;
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 50px;
+        bottom: 0;
+    }
+
+    .tree::before{
+        font-size: 2.5rem;
+        left: calc(50% - 27px);
+        top: -77px;
+    }
+}

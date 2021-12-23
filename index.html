@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="satan">
+        <img src="img/Anh-dep-ngo-nghinh-ve-ong-gia-Noel-removebg.png" alt="">
+    </div>
+    <div class="tree-parent">
+        <div class="tree">
+            <div class="top " style="--j:0" >
+                <span class="first-side" style="--i:0"></span>
+                <span class="second-side" style="--i:1"></span>
+                <span class="third-side" style="--i:2"></span>
+                <span class="fourth-side" style="--i:3"></span>
+            </div>
+            <div class="top " style="--j:1" >
+                <span class="first-side1" style="--i:0"></span>
+                <span class="second-side1" style="--i:1"></span>
+                <span class="third-side1" style="--i:2"></span>
+                <span class="fourth-side1" style="--i:3"></span>
+            </div>
+            <div class="top " style="--j:2" >
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+            </div>
+            <div class="top " style="--j:3" >
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+            </div>
+            <div class="bottom " style="--j:0" >
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+            </div>
+            <span class="shadow"></span>
+            <span class="border-arround"></span>
+        </div>
+    </div>
+
+<span class="music" >
+    <audio autoplay controls >
+        <source  src="music.mp3" type="audio/mp3">
+    </audio>
+    <strong>Music</strong>
+</span>
+
+
+
+    <section></section>
+    <script type="text/javascript" src="app.js" ></script>
+    <script type="text/javascript" src="particles.js"></script>
+
+    <script>
+        function starts(){
+            const count = 400;
+            const element = document.querySelector("section");
+            var i=0;
+
+            while(i < count){
+                const star = document.createElement("i");
+                const x = Math.floor(Math.random() * window.innerWidth )
+                const y = Math.floor(Math.random() * window.innerHeight )
+
+                const size = Math.random() * 1;
+                star.style.left = x+'px';
+                star.style.top = y+'px';
+                star.style.width = 2+size+'px';
+                star.style.height = 2+size+'px';
+                star.style.animationDuration = 2+size + 's';
+                element.appendChild(star);
+                i++;
+            }
+        }
+        starts();
+    </script>
+</body>
+</html>
